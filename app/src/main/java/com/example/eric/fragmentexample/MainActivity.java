@@ -26,7 +26,7 @@ public class MainActivity extends ActionBarActivity {
         FragmentManager manager = getFragmentManager();
 
         //Reference fragment transaction
-        final FragmentTransaction transaction = manager.beginTransaction();
+        FragmentTransaction transaction = manager.beginTransaction();
 
         //Create two new frag objects by instantiating the two classes
 
@@ -42,14 +42,18 @@ public class MainActivity extends ActionBarActivity {
 
         switchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                FragmentManager manager = getFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                FragmentOne fragOne = new FragmentOne();
+                FragmentTwo fragTwo = new FragmentTwo();
                 if (swap == 1){
                     transaction.replace(R.id.fragView, fragTwo, "Fragment Two");
-                    transaction.add(R.id.fragView, fragOne, "Fragment One");
+                    transaction.replace(R.id.fragView, fragOne, "Fragment One");
                     swap = 0;
                 }
                 else if (swap == 0){
                     transaction.replace(R.id.fragView,fragOne,"Fragment One");
-                    transaction.add(R.id.fragView, fragTwo, "Fragment Two");
+                    transaction.replace(R.id.fragView, fragTwo, "Fragment Two");
                     swap = 1;
                 }
                 transaction.commit();

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FragmentExample</string>
+
+    <string name="switchB">Switch</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_fragOne">Hello From Fragment One</string>
+    <string name="hello_fragTwo">Hello from Fragment Two</string>
+</resources>
